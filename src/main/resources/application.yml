@@ -1,0 +1,5 @@
+breaking-bad-api:
+  url: https://www.breakingbadapi.com
+
+server:
+  port: 8080
