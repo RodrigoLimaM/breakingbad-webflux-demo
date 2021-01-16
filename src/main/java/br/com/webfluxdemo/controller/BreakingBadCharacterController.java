@@ -1,7 +1,6 @@
-package br.com.webfluxdemo.webfluxdemo.controller;
+package br.com.webfluxdemo.controller;
 
-import br.com.webfluxdemo.webfluxdemo.model.out.CharacterInfo;
-import br.com.webfluxdemo.webfluxdemo.service.CharacterService;
+import br.com.webfluxdemo.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

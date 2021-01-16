@@ -1,4 +1,4 @@
-package br.com.webfluxdemo.webfluxdemo.model.out;
+package br.com.webfluxdemo.model.out;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

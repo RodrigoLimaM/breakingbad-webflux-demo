@@ -1,8 +1,7 @@
-package br.com.webfluxdemo.webfluxdemo;
+package br.com.webfluxdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
 public class WebfluxDemoApplication {

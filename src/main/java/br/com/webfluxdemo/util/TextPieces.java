@@ -1,4 +1,4 @@
-package br.com.webfluxdemo.webfluxdemo.util;
+package br.com.webfluxdemo.util;
 
 public class TextPieces {
 

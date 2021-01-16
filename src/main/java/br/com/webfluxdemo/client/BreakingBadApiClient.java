@@ -1,7 +1,7 @@
-package br.com.webfluxdemo.webfluxdemo.client;
+package br.com.webfluxdemo.client;
 
-import br.com.webfluxdemo.webfluxdemo.config.BreakingBadApiProperties;
-import br.com.webfluxdemo.webfluxdemo.model.in.Character;
+import br.com.webfluxdemo.config.BreakingBadApiProperties;
+import br.com.webfluxdemo.model.in.Character;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -30,6 +30,6 @@ public class BreakingBadApiClient {
                 .bodyToFlux(Character.class)
                 .distinct()
                 .next()
-                .log("br.com.webfluxdemo.webfluxdemo.client.BreakingBadApiClient", Level.INFO, SignalType.ON_NEXT, SignalType.ON_ERROR);
+                .log("br.com.webfluxdemo.client.BreakingBadApiClient", Level.INFO, SignalType.ON_NEXT, SignalType.ON_ERROR);
     }
 }

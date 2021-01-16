@@ -1,9 +1,9 @@
-package br.com.webfluxdemo.webfluxdemo.service;
+package br.com.webfluxdemo.service;
 
-import br.com.webfluxdemo.webfluxdemo.model.in.Character;
-import br.com.webfluxdemo.webfluxdemo.model.out.CharacterInfo;
-import br.com.webfluxdemo.webfluxdemo.util.DateUtils;
-import br.com.webfluxdemo.webfluxdemo.util.TextPieces;
+import br.com.webfluxdemo.model.in.Character;
+import br.com.webfluxdemo.model.out.CharacterInfo;
+import br.com.webfluxdemo.util.DateUtils;
+import br.com.webfluxdemo.util.TextPieces;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
 

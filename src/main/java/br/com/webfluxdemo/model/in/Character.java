@@ -1,4 +1,4 @@
-package br.com.webfluxdemo.webfluxdemo.model.in;
+package br.com.webfluxdemo.model.in;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

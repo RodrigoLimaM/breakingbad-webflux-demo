@@ -1,4 +1,4 @@
-package br.com.webfluxdemo.webfluxdemo.config;
+package br.com.webfluxdemo.config;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
