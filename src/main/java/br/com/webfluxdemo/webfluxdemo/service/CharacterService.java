@@ -18,6 +18,6 @@ public class CharacterService {
     public Mono<CharacterInfo> getCharacterByName(String name) {
         return Mono.just(name)
                 .flatMap(breakingBadApiClient::getCharacterByName)
-                .flatMap(characterConverter::convert);
+                .map(character -> characterConverter.convert(character));
     }
 }

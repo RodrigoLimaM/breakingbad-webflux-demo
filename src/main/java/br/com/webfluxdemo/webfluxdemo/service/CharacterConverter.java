@@ -6,14 +6,13 @@ import br.com.webfluxdemo.webfluxdemo.util.DateUtils;
 import br.com.webfluxdemo.webfluxdemo.util.TextPieces;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.regex.Pattern;
 
 @Service
-public class CharacterConverter implements Converter<Character, Mono<CharacterInfo>> {
+public class CharacterConverter implements Converter<Character, CharacterInfo> {
 
     private static final Pattern REPLACE_LAST_COMMA_TO_AND = Pattern.compile(",(?=[^,]+$)");
 
@@ -22,11 +21,11 @@ public class CharacterConverter implements Converter<Character, Mono<CharacterIn
     private static final int TWO_OCCUPATIONS = 2;
 
     @Override
-    public Mono<CharacterInfo> convert(Character source) {
-        return Mono.just(CharacterInfo.builder()
+    public CharacterInfo convert(Character source) {
+        return CharacterInfo.builder()
                 .characterDescription(createCharacterDescription(source))
                 .image(source.getImg())
-                .build());
+                .build();
     }
 
     private String createCharacterDescription(Character source) {
