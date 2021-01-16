@@ -4,6 +4,7 @@ import br.com.webfluxdemo.webfluxdemo.model.in.Character;
 import br.com.webfluxdemo.webfluxdemo.model.out.CharacterInfo;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,20 +12,20 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 @Service
-public class CharacterConverter implements Converter<Character, CharacterInfo> {
+public class CharacterConverter implements Converter<Character, Mono<CharacterInfo>> {
 
-    private final static Pattern REPLACE_LAST_COMMA_TO_AND = Pattern.compile(",(?=[^,]+$)");
+    private static final Pattern REPLACE_LAST_COMMA_TO_AND = Pattern.compile(",(?=[^,]+$)");
 
-    private final static DateTimeFormatter ddMMyyyy_WITH_TRACE_FORMATTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    private static final DateTimeFormatter ddMMyyyy_WITH_TRACE_FORMATTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
-    private final static DateTimeFormatter ddMMyyyy_WHIT_STRIPE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter ddMMyyyy_WHIT_STRIPE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Override
-    public CharacterInfo convert(Character source) {
-        return CharacterInfo.builder()
+    public Mono<CharacterInfo> convert(Character source) {
+        return Mono.just(CharacterInfo.builder()
                 .characterDescription(createCharacterDescription(source))
                 .image(source.getImg())
-                .build();
+                .build());
     }
 
     private String createCharacterDescription(Character source) {

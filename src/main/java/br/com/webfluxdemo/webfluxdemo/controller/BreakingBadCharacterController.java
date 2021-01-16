@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/character")
@@ -17,7 +17,7 @@ public class BreakingBadCharacterController {
     private CharacterService characterService;
 
     @GetMapping
-    public Flux<CharacterInfo> getCharacterByName(@RequestParam String name) {
+    public Mono<CharacterInfo> getCharacterByName(@RequestParam String name) {
         return characterService.getCharacterByName(name);
     }
 }
