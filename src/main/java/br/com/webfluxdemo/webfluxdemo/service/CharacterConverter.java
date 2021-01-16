@@ -35,9 +35,9 @@ public class CharacterConverter implements Converter<Character, Mono<CharacterIn
                 ", has as nickname " +
                 source.getNickname() +
                 ", the character occupation(s) are " +
-                getOccupations(source.getOccupations()) +
+                getOccupations(source.getOccupations()).toLowerCase() +
                 ", is " +
-                source.getStatus() +
+                source.getStatus().toLowerCase() +
                 " and is acted by " +
                 source.getPortrayed() +
                 ".";

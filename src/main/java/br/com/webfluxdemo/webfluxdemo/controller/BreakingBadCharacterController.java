@@ -3,6 +3,7 @@ package br.com.webfluxdemo.webfluxdemo.controller;
 import br.com.webfluxdemo.webfluxdemo.model.out.CharacterInfo;
 import br.com.webfluxdemo.webfluxdemo.service.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,10 @@ public class BreakingBadCharacterController {
     private CharacterService characterService;
 
     @GetMapping
-    public Mono<CharacterInfo> getCharacterByName(@RequestParam String name) {
-        return characterService.getCharacterByName(name);
+    public Mono<ResponseEntity> getCharacterByName(@RequestParam String name) {
+        return characterService.getCharacterByName(name)
+                .map(characterInfo -> ResponseEntity.ok().body(characterInfo))
+                .cast(ResponseEntity.class)
+                .defaultIfEmpty(ResponseEntity.noContent().build());
     }
 }
