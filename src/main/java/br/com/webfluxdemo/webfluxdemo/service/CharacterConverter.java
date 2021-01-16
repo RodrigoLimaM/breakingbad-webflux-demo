@@ -15,7 +15,7 @@ public class CharacterConverter implements Converter<Character, CharacterInfo> {
 
     private final static Pattern REPLACE_LAST_COMMA_TO_AND = Pattern.compile(",(?=[^,]+$)");
 
-    private final static DateTimeFormatter ddMMyyyy_WITH_TRACE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private final static DateTimeFormatter ddMMyyyy_WITH_TRACE_FORMATTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
     private final static DateTimeFormatter ddMMyyyy_WHIT_STRIPE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
