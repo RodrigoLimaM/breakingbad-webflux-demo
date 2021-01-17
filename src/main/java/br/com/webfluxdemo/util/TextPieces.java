@@ -8,7 +8,7 @@ public class TextPieces {
 
     public static final String NICKNAME_PREFIX = ", has ";
 
-    public static final String NICKNAME_SUFFIX = " as nickname ";
+    public static final String NICKNAME_SUFFIX = " as nickname";
 
     public static final String OCCUPATIONS_SUFFIX = ", the character occupation";
 
